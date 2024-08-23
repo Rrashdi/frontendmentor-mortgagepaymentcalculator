@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'PJS-bold';
+    src: url(./assets/fonts/static/PlusJakartaSans-Bold.ttf);
+}
+@font-face {
+    font-family: 'PJS-medium';
+    src: url(./assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+:root{
+--primary-Lime: hsl(61, 70%, 52%);
+--light-lime: hsla(61, 70%, 52%, 0.3);
+--primary-Red: hsl(4, 69%, 50%);
+
+--Slate-100: hsl(202, 86%, 94%);
+--Slate-300: hsl(203, 41%, 72%);
+--Slate-500: hsl(200, 26%, 54%);
+--Slate-700: hsl(200, 24%, 40%);
+--Slate-900: hsl(202, 55%, 16%);
+--Slate-900-dark: hsl(201, 59%, 11%);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    font-family: PJS-medium;
+    color: var(--Slate-700);
+    background: var(--Slate-100);
+}
+.container{
+    --padding: 1.5rem;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+ .left{
+    --gap: 1rem;
+    --border-radius: 3px;
+    flex-shrink: 0;
+    width: 100%;
+    padding: var(--padding);
+    display: grid;
+    gap: var(--gap);
+}
+.head-clearbtn{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+.head-clearbtn h2{
+    color: var(--Slate-900);
+}
+.resetbtn{
+    color: var(--Slate-700);
+    background: transparent;
+    font-size: 1rem;
+    border: none;
+    width: fit-content;
+    border-bottom: 1px dotted black;
+}
+.mortgage-amount{
+    margin-top: .5rem;
+}
+.input-label-grid{
+    display: grid;
+    gap: .2rem;
+}
+input[type=number]{
+    padding: .5rem;
+    margin-block: .5rem;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: .8px;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--Slate-900);
+}
+.inputandsymbol{
+    margin-top: .5rem;
+    position: relative;
+    display: flex;
+    border: 1px solid var(--Slate-300);
+    border-radius: 3px;
+    gap: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+input:invalid{
+    outline: 3px solid red;
+}
+.inputandsymbol input{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.pound{
+    background-color: var(--Slate-100);
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    height: 100%;
+}
+.years{
+    background-color: var(--Slate-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    padding: .5rem .5rem;
+    line-height: 3px;
+}
+.inputandsymbol:hover{
+    border: 1px solid var(--primary-Lime);
+}
+.inputandsymbol:hover :is(.pound, .years){
+    background: var(--primary-Lime);
+    color: var(--Slate-900-dark);
+}
+.inputandsymbol:focus-within{
+    border-color: var(--primary-Lime);
+}
+.inputandsymbol:focus-within :is(.pound, .years){
+    background: var(--primary-Lime);
+    border: 1px solid var(--primary-Lime);
+    color: var(--Slate-900-dark);
+}
+.inputandsymbol.error{
+    border-color: red;
+}
+.inputandsymbol.error p, .inputandsymbol.error :is(.pound, .years){
+    background-color: rgb(244, 55, 55);
+    border: 1px solid red;
+    color: white;
+}
+.mortgage-interest-container{
+    display: grid;
+    gap: var(--gap);
+}
+
+.mg-bot{
+    margin-bottom: .5rem;
+}
+input[type=radio]{
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    outline: 2px solid var(--Slate-900);
+    outline-offset: 2px;
+    border-radius: 50%;
+    margin-left: .5rem;
+}
+input[type=radio]:checked{
+    background-color: var(--primary-Lime);
+    outline-color: var(--primary-Lime);
+    
+}
+input[type=radio]+label{
+    font-weight: bold;
+}
+.repayment, .interest-Only{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid var(--Slate-300);
+    padding: 8px 8px;
+    margin-bottom: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+.repayment label, .interest-Only label{
+    width: 100%;
+}
+.repayment:hover, .interest-Only:hover{
+    border-color: var(--primary-Lime);
+}
+:is(.interest-Only, .repayment):has(input[type=radio]:checked){
+    background-color: var(--light-lime);
+    border-color: var(--primary-Lime);
+}
+.error{
+    font-size: 14px;
+    color: red;
+}
+button[type=submit]{
+    padding: .8rem;
+    border-radius: 10vw;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-Lime);
+}
+
+.right{
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+    background-color: var(--Slate-900);
+    padding: var(--padding);
+}
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color:var(--Slate-500);
+}
+.empty h3{
+    color: white;
+}
+.empty p{
+    text-align: center;
+    font-size: .8rem;
+}
+.completed{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.completed h3{
+    color: white;
+    letter-spacing: 2px;
+}
+.completed p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+    color:rgba(255, 255, 255, 0.581);
+}
+ .completed .result-board{
+    background-color: var(--Slate-900-dark);
+    border-top: 4px solid var(--primary-Lime);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    align-content: space-around;
+    margin-top: 1rem;
+}
+.result-board h1{
+    color: var(--primary-Lime);
+    margin-block: .5rem;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+}
+.result-board hr{
+    
+    height: 2px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.result-board .total{
+    color: white;
+    letter-spacing: 1px;
+    margin-top: .5rem;
+}
+.hide{
+    display: none;
+}
+@media screen and (min-width: 760px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .head-clearbtn{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .container{
+        max-width: 792px;
+        flex-wrap: nowrap;
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
+    .left{
+        width:50%;
+    }
+    .mortgage-interest-container{
+        display: flex;
+        gap: var(--gap);
+    }
+    button[type=submit]{
+        max-width: 80%;
+    }
+    .right{
+        border-bottom-left-radius: 3.5rem;
+        width:50%;
+    }
+    .result-board{
+        justify-content: space-between;
+        
+        
+    }
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

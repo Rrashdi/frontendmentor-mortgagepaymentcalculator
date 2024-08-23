@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="head-clearbtn">
+          <h2>Mortgage Calculator</h2>
+          <button type="reset" class="resetbtn">Clear All</button>
+        </div>
+
+        <div class="mortgage-amount input-label-grid">
+          <label for="mortgageAmount">Mortgage Amonut</label>
+          <div class="inputandsymbol">
+            <p class="pound">£</p>
+            <input type="number" name="mortgageAmount" id="mortgageAmount" />
+          </div>
+          <p class="error hide">This field is required!!</p>
+        </div>
+
+        <div class="mortgage-interest-container">
+          <div class="mortgage-term input-label-grid">
+            <label for="mortgageterm">Mortgage term</label>
+            <div class="inputandsymbol">
+              <input
+                type="number"
+                name="mortgageterm"
+                id="mortgageterm"
+                min="0"
+              />
+              <p class="years">years</p>
+            </div>
+            <p class="error hide">This field is required!!</p>
+          </div>
+          <div class="interest input-label-grid">
+            <label for="interest">Interest Rate</label>
+            <div class="inputandsymbol">
+              <input type="number" name="interest" id="interest" min="0" />
+              <p class="pound">%</p>
+            </div>
+            <p class="error hide" style="color: red">
+              This field is required!!
+            </p>
+          </div>
+        </div>
+        <div class="mortgage-type-container">
+          <p class="mg-bot">Mortgage Type</p>
+          <div class="repayment">
+            <input
+              type="radio"
+              name="radio"
+              id="repayment-radio"
+              value="repayment"
+            />
+            <label for="repayment-radio">Repayment</label>
+          </div>
+          <div class="interest-Only">
+            <input
+              type="radio"
+              name="radio"
+              id="interest-radio"
+              value="interest-only"
+            />
+            <label for="interest-radio">Interest Only</label>
+          </div>
+          <p class="error hide">This field is required!!</p>
+        </div>
+        <button type="submit" class="calcbtn">
+          <img
+            src="./assets/images/icon-calculator.svg"
+            alt="calculator"
+          />Calculate Repayments
+        </button>
+      </div>
+      <div class="right">
+        <div class="empty">
+          <img
+            src="./assets/images/illustration-empty.svg"
+            alt="calculator image"
+          />
+          <h3>Results shown here</h3>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="completed hide">
+          <h3>Your result</h3>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div class="result-board">
+            <div class="result-card-top">
+              <p>Your monthly repayments</p>
+              <h1 class="monthly-payment"></h1>
+            </div>
+            <hr />
+            <div class="result-card-bottom">
+              <p>Total you'll repay over the term</p>
+              <h3 class="total"></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">RrashdiCode</a>.
+    </div>
+  </body>
+</html>
